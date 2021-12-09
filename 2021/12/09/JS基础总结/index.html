@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>JS基础总结 - codexc</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="JavaScript学习笔记1、JavaScript的基本输入输出概念1.1 简单的三个输出案例123456789101112131415161718192021&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;zh&quot;&gt;&lt;head&gt;  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;  &lt;meta nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS基础总结">
+<meta property="og:url" content="http://101.34.225.67/2021/12/09/JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="codexc">
+<meta property="og:description" content="JavaScript学习笔记1、JavaScript的基本输入输出概念1.1 简单的三个输出案例123456789101112131415161718192021&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;zh&quot;&gt;&lt;head&gt;  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;  &lt;meta nam">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-09T12:31:47.000Z">
+<meta property="article:modified_time" content="2021-12-09T12:35:26.953Z">
+<meta property="article:author" content="codexc">
+<meta property="article:tag" content="JavsScript">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1639053335298">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639053335298">
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="codexc" class="mdui-btn mdui-btn-icon"><img src="https://gitee.com/dw_3_0/picture/raw/master/img/head.jpg" alt="codexc"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="codexc">
+            <img src="https://gitee.com/dw_3_0/picture/raw/master/img/head.jpg" alt="codexc" alt="codexc">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=1422442323&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/1552987576" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/hxcFhh" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端/">前端</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/后端/">后端</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/JavsScript/" style="font-size: 10px;">JavsScript</a> <a href="/tags/VB-Net/" style="font-size: 20px;">VB.Net</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 codexc
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+	<div style="font-size: 13px">
+            <link rel="stylesheet" href="https://widget.heweather.net/standard/static/css/he-standard.css?v=1.4.0"><script src="https://widget.heweather.net/standard/static/js/he-standard.js?v=1.4.0"></script><script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br>
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img data-src="https://gitee.com/dw_3_0/picture/raw/master/img/js1.png" data-sizes="auto" alt="JS基础总结" class="lazyload">
+              <h1>JS基础总结</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年12月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>9.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 43 分钟</a>
+</div>
+
+      
+
+      <h1 id="JavaScript学习笔记"><a href="#JavaScript学习笔记" class="headerlink" title="JavaScript学习笔记"></a>JavaScript学习笔记</h1><h1 id="1、JavaScript的基本输入输出概念"><a href="#1、JavaScript的基本输入输出概念" class="headerlink" title="1、JavaScript的基本输入输出概念"></a>1、JavaScript的基本输入输出概念</h1><h2 id="1-1-简单的三个输出案例"><a href="#1-1-简单的三个输出案例" class="headerlink" title="1.1 简单的三个输出案例"></a>1.1 简单的三个输出案例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh&quot;&gt;<br>&lt;head&gt;<br>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;<br>  &lt;title&gt;document&lt;/title&gt;<br>  &lt;script type=&quot;text/javascript&quot;&gt;<br>  // 控制浏览器弹出一个警告框<br>    alert(&quot;你是一个大帅哥&quot;)<br>  // 让计算机在页面中输出一个内容<br>  // document.write是往body中写入一个内容<br>    document.write(&quot;你是一个大帅哥&quot;)<br>  // 在控制台中输入一个内容<br>    console.log(&quot;你别说了，我也不知道我在那呢&quot;)<br>  &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-2-代码的编写位置和基本语法"><a href="#1-2-代码的编写位置和基本语法" class="headerlink" title="1.2 代码的编写位置和基本语法"></a>1.2 代码的编写位置和基本语法</h2><h3 id="1-2-1-编写位置"><a href="#1-2-1-编写位置" class="headerlink" title="1.2.1 编写位置"></a>1.2.1 编写位置</h3><ol>
+<li><p>直接写在<code>script</code>标签里</p>
+</li>
+<li><p>通过<code>script</code> 引入src文件</p>
+</li>
+<li></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh&quot;&gt;<br>&lt;head&gt;<br>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;<br>  &lt;title&gt;Document&lt;/title&gt;<br>  &lt;!-- <br>    可以将Js代码写到外部js文件中，然后通过script标签引入<br>    写到外部文件中可以在不同的页面中同时引用，同时也可以利用到浏览器的缓存机制，推荐使用的方式<br><br>   --&gt;<br>  &lt;script type=&quot;text/javascript&quot; src=&quot;01.test.js&quot;&gt;<br>    alert(&quot;我是内部的js&quot;)<br>    // 如果一个script标签已经用来引用外部文件了，那么这个标签不能再编写任何语句，<br>  &lt;/script&gt;<br>  &lt;script&gt;<br>    alert(&quot;我是内部的js&quot;)<br>  &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;!-- <br>    可以将js代码编写到标签的onclick属性中 <br>    当我们点击按钮的时候，js代码才会执行<br>    <br>    虽然可以写在属性标签中，但是他们属于结构与行为耦合，不方便维护，不推荐<br>  --&gt;<br>  &lt;button onclick=&quot;alert(&#x27;你点我干嘛&#x27;);&quot;&gt;点我一下&lt;/button&gt;<br>  <br>  &lt;!-- <br>    可以将js代码写在超链接的herf属性中，这样在点击超链接时，会执行js代码<br>   --&gt;<br>  &lt;a href=&quot;javascript:alert(&#x27;让你点你就点？&#x27;);&quot;&gt;你也点我一下&lt;/a&gt;<br>  &lt;a href=&quot;javascript:;&quot;&gt;你也点我一下&lt;/a&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="1-2-2-基本语法"><a href="#1-2-2-基本语法" class="headerlink" title="1.2.2 基本语法"></a>1.2.2 基本语法</h3><ol>
+<li><p>同C系列语言一样，//是单行注释 /**/是多行注释</p>
+</li>
+<li><p>区分大小写</p>
+</li>
+<li><p>每一句都要以分号结尾，如果没写的话服务器会自动添加。但是这样不但会消耗更多的硬件资源，而且容易给服务器造成歧义</p>
+</li>
+<li><p>3.js中会忽略多个空格和换行，所以要保证代码的整洁</p>
+</li>
+</ol>
+<p><strong>下面以简单的三个输出为例</strong> <strong>：</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;/title&gt;<br>    &lt;script&gt;<br>        // js的注释和c语言一样，多行和单行注释<br>        alert(&quot;hello&quot;);<br>        document.write(&quot;hello&quot;);<br>        console.log(&quot;hello&quot;); //该语句在控制台中输出一个日志<br>    &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-3-几种数据类型"><a href="#1-3-几种数据类型" class="headerlink" title="1.3 几种数据类型"></a>1.3 几种数据类型</h2><p><strong>引用类型和值类型的具体区别可以看资料中的表1-1</strong> </p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/9ENkfKmhzSNsLdZVRWYw5B">表1-1</a></p>
+<h3 id="1-3-1-Number类型"><a href="#1-3-1-Number类型" class="headerlink" title="1.3.1 Number类型"></a>1.3.1 Number类型</h3><p>&ensp;&ensp;&ensp;&ensp;在js中的Number类型存在最大值和最小值，以及正负无穷，下面做实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;/title&gt;<br>    &lt;script&gt;<br>        /*<br>            js中存在数值类型的最大值，最大值是<br>            Number.MAX_VALUE<br>        1.7976931348623157e+308<br>      如果使用Number表示的数字超过了最大值，则会显示 Infinity<br>      Infinity为正无穷<br>      -Infinity为负无穷<br>      <br>      同样，在js中同样存在最小值，<br>      Number.Min_VALUE<br>      0以上的最小值 5e-324<br>、<br>        */<br>      var a;<br>    a = Number.MAX_VALUE * Number.MAX_VALUE; //这里是最大值乘以最大值<br>    console.log(a);<br>    console.log(typeof a)<br>    // infinity也是number类型<br>    /*<br>      NaN表示非数值 类型，typeof显示的类型也是number 表示Not A Number<br>    */<br>    &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="1-3-2-浮点型"><a href="#1-3-2-浮点型" class="headerlink" title="1.3.2 浮点型"></a>1.3.2 浮点型</h3><h3 id="1-3-3-字符和字符串"><a href="#1-3-3-字符和字符串" class="headerlink" title="1.3.3 字符和字符串"></a>1.3.3 字符和字符串</h3><h3 id="1-3-4-Boolean类型"><a href="#1-3-4-Boolean类型" class="headerlink" title="1.3.4 Boolean类型"></a>1.3.4 Boolean类型</h3><p>如果需要，作为第一个参数传递的值将转换为布尔值。如果省略或值<code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>），该对象具有的初始值<code>false</code>。所有其他值，包括任何对象，空数组（<code>[]</code>）或字符串<code>&quot;false&quot;</code>，都会创建一个初始值为<code>true</code>的对象。</p>
+<p>注意不要将基本类型中的布尔值 <code>true</code> 和 <code>false</code> 与值为 <code>true</code> 和 <code>false</code> 的 <code>Boolean</code> 对象弄混了。</p>
+<p>其值不是<code>undefined</code>或<code>null</code>的任何对象（包括其值为<code>false</code>的布尔对象）在传递给条件语句时都将计算为<code>true</code>。 例如，以下<code>if</code>语句中的条件评估为<code>true</code>：</p>
+<blockquote>
+<p><code>underfined</code>：一个声明未定义的变量的初始值，或没有实际参数的形式参数。</p>
+</blockquote>
+<blockquote>
+<p><code>null</code>：值 <code>null</code> 是一个字面量，不像 <code>undefined</code>，它不是全局对象的一个属性。<code>null</code> 是表示缺少的标识，指示变量未指向任何对象。把 <code>null</code> 作为尚未创建的对象，也许更好理解。在 API 中，<code>null</code> 常在返回类型应是一个对象，但没有关联的值的地方使用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">false</span>);<br><span class="hljs-keyword">if</span> (x) &#123;<br>  <span class="hljs-comment">// 这里的代码会被执行</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>如果是值为true或者false的基本类型的Boolean就不会出现这种情况：</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-literal">false</span>;<br><span class="hljs-keyword">if</span> (x) &#123;<br>  <span class="hljs-comment">// 这里的代码不会执行</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>不要用创建 <code>Boolean</code> 对象的方式将一个非布尔值转化成布尔值，直接将 <code>Boolean</code> 当做转换函数来使用即可，或者使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#%E9%80%BB%E8%BE%91%E9%9D%9E%EF%BC%88!%EF%BC%89">双重非（!!）运算符 (en-US)</a>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-built_in">Boolean</span>(expression);     <span class="hljs-comment">// 推荐 当做一个转换函数来使用</span><br><span class="hljs-keyword">var</span> x = !!(expression);          <span class="hljs-comment">// 推荐 使用双双非</span><br><span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(expression); <span class="hljs-comment">// 不太好 这个的局限性稍微有一些大</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">      非</span><br><span class="hljs-comment">          - ! 可以对一个值进行取非操作，真变假，假变真</span><br><span class="hljs-comment">              同时也可以使用！！来进行一个隐式的数据类型转换</span><br><span class="hljs-comment">        进行运算的时候会将值先转换为bool值，然后再进行运算</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">      与</span><br><span class="hljs-comment">          - 符号两侧的值进行与运算</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">      或</span><br><span class="hljs-comment">  */</span><br>  <span class="hljs-comment">//其实就是短路的规则</span><br>  <span class="hljs-comment">//与运算：如果两个值都是true，则返回后面的那个值</span><br>  <span class="hljs-keyword">var</span> result = <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span>;<br>  <span class="hljs-comment">//这里result的值就会变成2</span><br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;result=&quot;</span> + result)<br>  <span class="hljs-comment">// 如果两个值中有false，则返回靠前的false</span><br>  result = <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-number">2</span>;<br>  <span class="hljs-built_in">console</span>.log(result);<br>  result = <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-number">0</span>;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;result=&quot;</span>, result);<br><br>  <span class="hljs-comment">//如果两个值全都是false，那么也是返回靠前的false</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-4-自变量和常量"><a href="#1-4-自变量和常量" class="headerlink" title="1.4 自变量和常量"></a>1.4 自变量和常量</h2><p><strong>字面量（常量）：就是不可变的值</strong> </p>
+<p>&ensp;&ensp;&ensp;&ensp;比如：1 2 3 4 5</p>
+<p>&ensp;&ensp;&ensp;&ensp;字面量都是可以直接使用的，但是我们一般都不会直接使用字面量</p>
+<p><strong>变量：变量用来表存字面量，而且变量的值是可以任意改变的</strong> </p>
+<p>&ensp;&ensp;&ensp;&ensp;等于其他语言</p>
+<p><strong>声明变量</strong> </p>
+<p>在js中使用var变量来声明一个变量，等于go，只不过是弱类型的</p>
+<p>ps：JS没有真正意义上的const常量</p>
+<h3 id="1-4-1-进制"><a href="#1-4-1-进制" class="headerlink" title="1.4.1 进制"></a>1.4.1 进制</h3><p>在这里开一节说Js中的进制问题</p>
+<p>后续填坑。。。。</p>
+<h2 id="1-5-类型转换"><a href="#1-5-类型转换" class="headerlink" title="1.5 类型转换"></a>1.5 类型转换</h2><p>JavaScript中的类型具体可以去查看另外一个文档的表1-1</p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/7fnBaUUrJA44Ugz62KMVdN">JavaScript的笔记的一些资料</a><a target="_blank" rel="noopener" href="https://www.wolai.com/9ENkfKmhzSNsLdZVRWYw5B">表1-1</a></p>
+<h3 id="1-5-1-转换为String类型"><a href="#1-5-1-转换为String类型" class="headerlink" title="1.5.1 转换为String类型"></a>1.5.1 转换为String类型</h3><p><code>String</code>类型在js中是值类型，只不过在使用的时候当做引用类型来处理</p>
+<p>方法：</p>
+<ol>
+<li><p>使用<code>toStrin()</code> 方法，这一点和java有些许类似</p>
+</li>
+<li><p>使用 <code>string()</code> 函数，这个方法可以适用<code>null</code>和<code>undefined</code></p>
+</li>
+</ol>
+<h3 id="1-5-2-转换为Number类型"><a href="#1-5-2-转换为Number类型" class="headerlink" title="1.5.2 转换为Number类型"></a>1.5.2 转换为Number类型</h3><p><strong>Number类型是值类型</strong> </p>
+<p>将其他的类型转换为Number</p>
+<p>转换方式一：</p>
+<p>&ensp;&ensp;&ensp;&ensp;使用Number()函数</p>
+<p>&ensp;&ensp;&ensp;&ensp;字符串→ </p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.如果字符串中有非数字内容，则转换为NaN</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.如果是空字符串，或者全是空格，则转换为0</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;3.如果是纯数字，则转换成功</p>
+<p>&ensp;&ensp;&ensp;&ensp;Bool→</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.true为1</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.false为0</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Null–&gt; 0</p>
+<p>&ensp;&ensp;&ensp;&ensp;undefinde → 数字NaN</p>
+<p>转换方式二：</p>
+<p>&ensp;&ensp;&ensp;&ensp;parseInt()可以将一个字符换里有效的整数内容读取出来</p>
+<p>ps：这里的转换方式二有一个不好的点，就是转换的进制不确定，但是这个函数是一个重载的函数，当你再加入一个参数用来表示进制的时候，这个问题就可以得到解决</p>
+<blockquote>
+<p>在js中，如果需要表示16进制的数字，则需要以0x开头,如果是0开头的话就是8进制,如果要表示二进制数字，则需要以0b开头，但是不是所有的浏览器都支持,如果使用parseInt()，有些浏览器会解析成十进制，有些会解析成八进制,这个方法可以使用parseInt(a,10)，传入第二个参数解决这个问题，和go中的strconv.parseInt()一致</p>
+</blockquote>
+<h3 id="1-5-3-转换为Boolean类型"><a href="#1-5-3-转换为Boolean类型" class="headerlink" title="1.5.3 转换为Boolean类型"></a>1.5.3 转换为Boolean类型</h3><p>&ensp;&ensp;&ensp;&ensp;首先要清楚一点，<code>Boolean</code> 在js中有没有用1或者0等数字来转换的规则</p>
+<p>&ensp;&ensp;&ensp;&ensp;&gt; 如果需要，作为第一个参数传递的值将转换为布尔值。如果省略或值<code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>），该对象具有的初始值<code>false</code>。所有其他值，包括任何对象，空数组（<code>[]</code>）或字符串<code>&quot;false&quot;</code>，都会创建一个初始值为<code>true</code>的对象。<br>&ensp;&ensp;&ensp;&ensp;<br>&ensp;&ensp;&ensp;&ensp;注意不要将基本类型中的布尔值 <code>true</code> 和 <code>false</code> 与值为 <code>true</code> 和 <code>false</code> 的 <code>Boolean</code> 对象弄混了。<br>&ensp;&ensp;&ensp;&ensp;<br>&ensp;&ensp;&ensp;&ensp;其值不是<code>undefined</code>或<code>null</code>的任何对象（包括其值为<code>false</code>的布尔对象）在传递给条件语句时都将计算为<code>true</code>。</p>
+<p>&ensp;&ensp;&ensp;&ensp;在这里我们采用的是MDN的一篇文章</p>
+<p>&ensp;&ensp;&ensp;&ensp;<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean</a></p>
+<p>&ensp;&ensp;&ensp;&ensp;<strong>这里将文章的内容进行一些精简：</strong> </p>
+<p>意思就是说：</p>
+<ol>
+<li><p><code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>）如果转换为<code>Boolean</code>初始值的话是false。</p>
+</li>
+<li><p>其余的值，包括任何对象或者是空数组或者是字符串的”false”都是<code>true</code></p>
+</li>
+</ol>
+<blockquote>
+<p>这里给出一点自己的见解，因为在js中的object和arrays仍旧是引用类型，所以就算初始化之后没有赋值也会默认是true</p>
+</blockquote>
+<h1 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2.运算符"></a>2.运算符</h1><h2 id="2-1-算术运算符"><a href="#2-1-算术运算符" class="headerlink" title="2.1 算术运算符"></a>2.1 算术运算符</h2><p>算数运算符</p>
+<p>任何数据和NaN进行运算最后的结果都是NaN</p>
+<p>对非Number值进行运算的时候都会转成Number值进行运算，string除外</p>
+<p>+</p>
+<p>&ensp;&ensp;&ensp;&ensp;-可以对两个值进行加法运算，字符串相加，拼串操作</p>
+<p>&ensp;&ensp;&ensp;&ensp;-非Number类型的值进行加减法的时候，true = 1 ,false = 0, null = 0</p>
+<p>&ensp;&ensp;&ensp;&ensp;-任何值和字符串做加法都会先转换成字符串，然后进行拼串操作</p>
+<p>&ensp;&ensp;&ensp;&ensp;-任意类型加上一个空串即可变成字符串</p>
+<p>-</p>
+<p>&ensp;&ensp;&ensp;&ensp;-两个值相减，减一个string也会转变成Number</p>
+<p>*</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同上，做加减乘除都会转换为Number，null为0，undefined为NaN</p>
+<p>/</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同上</p>
+<p>%</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同别的语言</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">var</span> num2 = <span class="hljs-number">20</span>;<br><span class="hljs-built_in">console</span>.log(num + num2);<br><span class="hljs-built_in">console</span>.log(num - num2);<br><span class="hljs-built_in">console</span>.log(num * num2);<br><span class="hljs-built_in">console</span>.log(num / num2);<br><span class="hljs-built_in">console</span>.log(num % num2);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="2-2-一元运算符"><a href="#2-2-一元运算符" class="headerlink" title="2.2 一元运算符"></a>2.2 一元运算符</h2><p>一元运算符，只需要一个操作数</p>
+<p>正号</p>
+<p>&ensp;&ensp;&ensp;&ensp;正号不会对数字产生任何影响</p>
+<p>负号</p>
+<p>&ensp;&ensp;&ensp;&ensp;负号可以对数字进行符号的取反</p>
+<p>-对于一个非Number类型的值</p>
+<p>&ensp;&ensp;&ensp;&ensp;它会将其先转换为Number类型的值，然后再运算</p>
+<p>可以通过这个方式对于一个变量进行类型的转换，通过+号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">1</span><br>num = <span class="hljs-string">&quot;&quot;</span> + num <span class="hljs-comment">//类型转换为string</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> num)<br><span class="hljs-built_in">console</span>.log(num)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-自增自减运算符"><a href="#2-3-自增自减运算符" class="headerlink" title="2.3 自增自减运算符"></a>2.3 自增自减运算符</h2><p>自增 ++ - 通过自增可以改变+1  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 也有前置和后置，和C语言一样  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 和C语言一模一样</p>
+<p>自减 — -通过自减可以改变-1</p>
+<p>&ensp;&ensp;&ensp;&ensp;- 也有前置和后置，和C语言一样  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 和C语言一模一样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">0</span>;<br>num++;<br>++num;<br><span class="hljs-built_in">console</span>.log(num++) <span class="hljs-comment">//输出的是num++的值，这里值是2</span><br><span class="hljs-built_in">console</span>.log(++num) <span class="hljs-comment">//这里输出的是++num的值，++num的值是4</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-4-逻辑运算符"><a href="#2-4-逻辑运算符" class="headerlink" title="2.4 逻辑运算符"></a>2.4 逻辑运算符</h2><p>和别的语言一样，与或非</p>
+<p><strong>非</strong> :</p>
+<p>&ensp;&ensp;&ensp;&ensp;！可以对一个值进行取非操作，真变假，假变真</p>
+<p>&ensp;&ensp;&ensp;&ensp;同时也可以使用！！来进行一个隐式的数据类型转换</p>
+<p>与和非也是同样的操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> b1 = <span class="hljs-literal">true</span>;<br><span class="hljs-keyword">let</span> b2 = <span class="hljs-literal">false</span>;<br><span class="hljs-built_in">console</span>.log(b1||b2)<br><span class="hljs-built_in">console</span>.log(b1&amp;&amp;b2)<br><span class="hljs-built_in">console</span>.log(!b1)<br><span class="hljs-built_in">console</span>.log(!b2)<br><span class="hljs-built_in">console</span>.log(!!num)<br></code></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="3-循环，分支，判断"><a href="#3-循环，分支，判断" class="headerlink" title="3 循环，分支，判断"></a>3 循环，分支，判断</h1><h1 id="4-面对对象的特性以及值类型和引用类型"><a href="#4-面对对象的特性以及值类型和引用类型" class="headerlink" title="4 面对对象的特性以及值类型和引用类型"></a>4 面对对象的特性以及值类型和引用类型</h1><h1 id="4-函数"><a href="#4-函数" class="headerlink" title="4 函数"></a>4 函数</h1><h2 id="4-1-构建函数的几种方法"><a href="#4-1-构建函数的几种方法" class="headerlink" title="4.1 构建函数的几种方法"></a>4.1 构建函数的几种方法</h2><h3 id="4-1-1-创建一个函数对象"><a href="#4-1-1-创建一个函数对象" class="headerlink" title="4.1.1 创建一个函数对象"></a>4.1.1 创建一个函数对象</h3><p>&ensp;&ensp;&ensp;&ensp;这个的使用情况是真的少</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法一：创建一个函数对象</span><br><span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">&quot;console.log(&#x27;Hello 这是我第一个函数&#x27;);&quot;</span>);<br>f1();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-2-使用函数声明创建函数"><a href="#4-1-2-使用函数声明创建函数" class="headerlink" title="4.1.2 使用函数声明创建函数"></a>4.1.2 使用函数声明创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法二：使用函数声明来创建一个函数</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">  function 函数名 ([形参1，形参2，...形参N]) &#123;</span><br><span class="hljs-comment">    代码块</span><br><span class="hljs-comment">  &#125;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello 这是我的第二条函数&quot;</span>);<br>&#125;<br>f2();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-3-使用函数表达式创建函数"><a href="#4-1-3-使用函数表达式创建函数" class="headerlink" title="4.1.3 使用函数表达式创建函数"></a>4.1.3 使用函数表达式创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法三：</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">  使用函数表达式来创建一个函数</span><br><span class="hljs-comment">  var 函数名 = function（[arguments...]） &#123;</span><br><span class="hljs-comment">    code</span><br><span class="hljs-comment">  &#125;</span><br><span class="hljs-comment">*/</span><br> <span class="hljs-keyword">var</span> f3 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello 这是我的第三个函数&quot;</span>);<br> &#125;<br> f3();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-4-匿名函数"><a href="#4-1-4-匿名函数" class="headerlink" title="4.1.4 匿名函数"></a>4.1.4 匿名函数</h3><p>&ensp;&ensp;&ensp;&ensp;没有名字的函数，在4.1.3中使用到的函数表达式就是匿名函数，匿名函数需要的实参在大括号的结尾使用一个小括号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> f4 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(num);<br>&#125;(<span class="hljs-number">20</span>)<br>f4();<br></code></pre></td></tr></table></figure>
+
+
+<p>var f4 = function(num){</p>
+<p>&ensp;&ensp;&ensp;&ensp;console.log(num);</p>
+<p>}(20)</p>
+<p>f4();</p>
+<h3 id="4-1-5-形参与实参"><a href="#4-1-5-形参与实参" class="headerlink" title="4.1.5 形参与实参"></a>4.1.5 形参与实参</h3><ol>
+<li><p>形参并不需要给定类型，所以在执行特定功能的函数时最好是去判断类型再决定是否继续执行</p>
+</li>
+<li><p>解析器并不会去管你有多少实参，如果是大于需要的参数，那么多余的实参会被忽略掉</p>
+</li>
+<li><p>如果是少于的话，没有实参的形参就是undefined</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">num1, num2</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> num1+num2;<br>&#125;<br><span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>));<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="4-1-6-返回值"><a href="#4-1-6-返回值" class="headerlink" title="4.1.6 返回值"></a>4.1.6 返回值</h3><ol>
+<li>js不能达到多个返回值的效果，如果想要做到多个返回值的效果可以使用全局变量或者是引用类型或者是数组的方式达到这个效果</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mul</span>(<span class="hljs-params">num1, num2</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> num1, num2;<br>&#125;<br><span class="hljs-keyword">var</span> a, b = mul(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <br><span class="hljs-comment">// 这里a的值是undefined， b的值是2</span><br><span class="hljs-built_in">console</span>.log(a,b)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-7-立即执行函数"><a href="#4-1-7-立即执行函数" class="headerlink" title="4.1.7 立即执行函数"></a>4.1.7 立即执行函数</h3><ol>
+<li><p>立即执行函数只会执行一次</p>
+</li>
+<li><p>立即执行函数需要使用括号包起来</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 立即执行函数</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num1, num2</span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(num1);<br>    <span class="hljs-built_in">console</span>.log(num2);<br>&#125;)(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="4-2-方法"><a href="#4-2-方法" class="headerlink" title="4.2 方法"></a>4.2 方法</h2><blockquote>
+<p>js中的方法声明和java非常类似，也是某个对象下面的成员，但是js中更体现了方法和对象的关系，在没有修饰符约束下的js，感觉可构造性更强。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//方法一：直接声明一个方法</span><br><span class="hljs-keyword">var</span> student2 = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;孙悟空&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">sayName</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 在js中，成员变量可以是方法，在这种情况下，我们称这个成员变量，即这个函数是这个对象的方法</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">*   函数可以成为一个对象的属性</span><br><span class="hljs-comment">*       类似于java中的成员变量，只能通过student调用这个方法(method)</span><br><span class="hljs-comment">* */</span><br><span class="hljs-comment">// 方法二：.</span><br>student.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>&#125;<br>student.sayName();<br>student2.sayName();<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="4-3-枚举对象中的属性"><a href="#4-3-枚举对象中的属性" class="headerlink" title="4.3 枚举对象中的属性"></a>4.3 枚举对象中的属性</h2><p>这里需要知道dot操作属性和 [] 操作属性的区别，所以这里引用了一篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/rDyehK2nSrcFc53D97TeQX"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> student = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;猪八戒&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">gender</span>: <span class="hljs-string">&quot;男&quot;</span>,<br>    <span class="hljs-attr">address</span>: <span class="hljs-string">&quot;高老庄&quot;</span><br>&#125;;<br>student.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> n <span class="hljs-keyword">in</span> student) &#123;<br>    <span class="hljs-built_in">console</span>.log(n) <span class="hljs-comment">// n存储的是字段(成员变量的名字)</span><br>    <span class="hljs-comment">//这里会输出五个字段，分别是name，gender，age，address和sayName，由此可见方法也是算在字段里面的，</span><br>    <span class="hljs-comment">//如果想要取出在student中他们的值，那么可以：</span><br>    <span class="hljs-built_in">console</span>.log(student[n])<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-作用域-scope-和面向对象"><a href="#5-作用域-scope-和面向对象" class="headerlink" title="5 作用域(scope)和面向对象"></a>5 作用域(scope)和面向对象</h1><h2 id="5-1-作用域"><a href="#5-1-作用域" class="headerlink" title="5.1 作用域"></a>5.1 作用域</h2><p>作用域基本上和C语言没什么区别，需要注意以下几点：</p>
+<ol>
+<li>存在一个全局的对象Windows，大部分的函数都是使用的window，比如说alert，其实可以写成window.alert。或者是cansole.log，也可以写成window.console.log</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-comment">/*</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        * 作用域</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *  -- 作用域指的是一个变量的作用的范围</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *  js中存在两种作用域“</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *   1. 全局作用域，即全局变量</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --直接编写在script标签中的js代码，都在全局作用域</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --全局作用域在页面打开时创建，在页面关闭时销毁</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --在全局作用域中有一个全局对象window.</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           代表的是一个浏览器的窗口，它由浏览器创建，我们可以直接使用</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --在全局作用域中：</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           创建的变量都会作为window对象的属性保存</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           创建的函数都会作为window对象的方法保存</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *   2.函数作用域，又叫局部变量</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        * */</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>); <span class="hljs-comment">// 这里可以证明window是一个全局变量，还是</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 这里是自己创建的一个变量 a</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.a); <span class="hljs-comment">// 这里可以证明a是window的一个属性</span></span></span><br><span class="javascript"><span class="xml">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml"></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-2-作用域在ES6中的声明"><a href="#5-2-作用域在ES6中的声明" class="headerlink" title="5.2 作用域在ES6中的声明"></a>5.2 作用域在ES6中的声明</h2><p>这里日后填坑，ES6把let作为块声明</p>
+<h1 id="6-对象"><a href="#6-对象" class="headerlink" title="6.对象"></a>6.对象</h1><p>首先还是基础的概念，万物皆对象，而JavaScript中是</p>
+<h1 id="1、JavaScript的基本输入输出概念-1"><a href="#1、JavaScript的基本输入输出概念-1" class="headerlink" title="1、JavaScript的基本输入输出概念"></a>1、JavaScript的基本输入输出概念</h1><h2 id="1-1-简单的三个输出案例-1"><a href="#1-1-简单的三个输出案例-1" class="headerlink" title="1.1 简单的三个输出案例"></a>1.1 简单的三个输出案例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh&quot;&gt;<br>&lt;head&gt;<br>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;<br>  &lt;title&gt;document&lt;/title&gt;<br>  &lt;script type=&quot;text/javascript&quot;&gt;<br>  // 控制浏览器弹出一个警告框<br>    alert(&quot;你是一个大帅哥&quot;)<br>  // 让计算机在页面中输出一个内容<br>  // document.write是往body中写入一个内容<br>    document.write(&quot;你是一个大帅哥&quot;)<br>  // 在控制台中输入一个内容<br>    console.log(&quot;你别说了，我也不知道我在那呢&quot;)<br>  &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-2-代码的编写位置和基本语法-1"><a href="#1-2-代码的编写位置和基本语法-1" class="headerlink" title="1.2 代码的编写位置和基本语法"></a>1.2 代码的编写位置和基本语法</h2><h3 id="1-2-1-编写位置-1"><a href="#1-2-1-编写位置-1" class="headerlink" title="1.2.1 编写位置"></a>1.2.1 编写位置</h3><ol>
+<li><p>直接写在<code>script</code>标签里</p>
+</li>
+<li><p>通过<code>script</code> 引入src文件</p>
+</li>
+<li></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh&quot;&gt;<br>&lt;head&gt;<br>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;<br>  &lt;title&gt;Document&lt;/title&gt;<br>  &lt;!-- <br>    可以将Js代码写到外部js文件中，然后通过script标签引入<br>    写到外部文件中可以在不同的页面中同时引用，同时也可以利用到浏览器的缓存机制，推荐使用的方式<br><br>   --&gt;<br>  &lt;script type=&quot;text/javascript&quot; src=&quot;01.test.js&quot;&gt;<br>    alert(&quot;我是内部的js&quot;)<br>    // 如果一个script标签已经用来引用外部文件了，那么这个标签不能再编写任何语句，<br>  &lt;/script&gt;<br>  &lt;script&gt;<br>    alert(&quot;我是内部的js&quot;)<br>  &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;!-- <br>    可以将js代码编写到标签的onclick属性中 <br>    当我们点击按钮的时候，js代码才会执行<br>    <br>    虽然可以写在属性标签中，但是他们属于结构与行为耦合，不方便维护，不推荐<br>  --&gt;<br>  &lt;button onclick=&quot;alert(&#x27;你点我干嘛&#x27;);&quot;&gt;点我一下&lt;/button&gt;<br>  <br>  &lt;!-- <br>    可以将js代码写在超链接的herf属性中，这样在点击超链接时，会执行js代码<br>   --&gt;<br>  &lt;a href=&quot;javascript:alert(&#x27;让你点你就点？&#x27;);&quot;&gt;你也点我一下&lt;/a&gt;<br>  &lt;a href=&quot;javascript:;&quot;&gt;你也点我一下&lt;/a&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="1-2-2-基本语法-1"><a href="#1-2-2-基本语法-1" class="headerlink" title="1.2.2 基本语法"></a>1.2.2 基本语法</h3><ol>
+<li><p>同C系列语言一样，//是单行注释 /**/是多行注释</p>
+</li>
+<li><p>区分大小写</p>
+</li>
+<li><p>每一句都要以分号结尾，如果没写的话服务器会自动添加。但是这样不但会消耗更多的硬件资源，而且容易给服务器造成歧义</p>
+</li>
+<li><p>3.js中会忽略多个空格和换行，所以要保证代码的整洁</p>
+</li>
+</ol>
+<p><strong>下面以简单的三个输出为例</strong> <strong>：</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;/title&gt;<br>    &lt;script&gt;<br>        // js的注释和c语言一样，多行和单行注释<br>        alert(&quot;hello&quot;);<br>        document.write(&quot;hello&quot;);<br>        console.log(&quot;hello&quot;); //该语句在控制台中输出一个日志<br>    &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-3-几种数据类型-1"><a href="#1-3-几种数据类型-1" class="headerlink" title="1.3 几种数据类型"></a>1.3 几种数据类型</h2><p><strong>引用类型和值类型的具体区别可以看资料中的表1-1</strong> </p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/9ENkfKmhzSNsLdZVRWYw5B">表1-1</a></p>
+<h3 id="1-3-1-Number类型-1"><a href="#1-3-1-Number类型-1" class="headerlink" title="1.3.1 Number类型"></a>1.3.1 Number类型</h3><p>&ensp;&ensp;&ensp;&ensp;在js中的Number类型存在最大值和最小值，以及正负无穷，下面做实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;/title&gt;<br>    &lt;script&gt;<br>        /*<br>            js中存在数值类型的最大值，最大值是<br>            Number.MAX_VALUE<br>        1.7976931348623157e+308<br>      如果使用Number表示的数字超过了最大值，则会显示 Infinity<br>      Infinity为正无穷<br>      -Infinity为负无穷<br>      <br>      同样，在js中同样存在最小值，<br>      Number.Min_VALUE<br>      0以上的最小值 5e-324<br>、<br>        */<br>      var a;<br>    a = Number.MAX_VALUE * Number.MAX_VALUE; //这里是最大值乘以最大值<br>    console.log(a);<br>    console.log(typeof a)<br>    // infinity也是number类型<br>    /*<br>      NaN表示非数值 类型，typeof显示的类型也是number 表示Not A Number<br>    */<br>    &lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="1-3-2-浮点型-1"><a href="#1-3-2-浮点型-1" class="headerlink" title="1.3.2 浮点型"></a>1.3.2 浮点型</h3><h3 id="1-3-3-字符和字符串-1"><a href="#1-3-3-字符和字符串-1" class="headerlink" title="1.3.3 字符和字符串"></a>1.3.3 字符和字符串</h3><h3 id="1-3-4-Boolean类型-1"><a href="#1-3-4-Boolean类型-1" class="headerlink" title="1.3.4 Boolean类型"></a>1.3.4 Boolean类型</h3><p>如果需要，作为第一个参数传递的值将转换为布尔值。如果省略或值<code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>），该对象具有的初始值<code>false</code>。所有其他值，包括任何对象，空数组（<code>[]</code>）或字符串<code>&quot;false&quot;</code>，都会创建一个初始值为<code>true</code>的对象。</p>
+<p>注意不要将基本类型中的布尔值 <code>true</code> 和 <code>false</code> 与值为 <code>true</code> 和 <code>false</code> 的 <code>Boolean</code> 对象弄混了。</p>
+<p>其值不是<code>undefined</code>或<code>null</code>的任何对象（包括其值为<code>false</code>的布尔对象）在传递给条件语句时都将计算为<code>true</code>。 例如，以下<code>if</code>语句中的条件评估为<code>true</code>：</p>
+<blockquote>
+<p><code>underfined</code>：一个声明未定义的变量的初始值，或没有实际参数的形式参数。</p>
+</blockquote>
+<blockquote>
+<p><code>null</code>：值 <code>null</code> 是一个字面量，不像 <code>undefined</code>，它不是全局对象的一个属性。<code>null</code> 是表示缺少的标识，指示变量未指向任何对象。把 <code>null</code> 作为尚未创建的对象，也许更好理解。在 API 中，<code>null</code> 常在返回类型应是一个对象，但没有关联的值的地方使用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">false</span>);<br><span class="hljs-keyword">if</span> (x) &#123;<br>  <span class="hljs-comment">// 这里的代码会被执行</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>如果是值为true或者false的基本类型的Boolean就不会出现这种情况：</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-literal">false</span>;<br><span class="hljs-keyword">if</span> (x) &#123;<br>  <span class="hljs-comment">// 这里的代码不会执行</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>不要用创建 <code>Boolean</code> 对象的方式将一个非布尔值转化成布尔值，直接将 <code>Boolean</code> 当做转换函数来使用即可，或者使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#%E9%80%BB%E8%BE%91%E9%9D%9E%EF%BC%88!%EF%BC%89">双重非（!!）运算符 (en-US)</a>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> x = <span class="hljs-built_in">Boolean</span>(expression);     <span class="hljs-comment">// 推荐 当做一个转换函数来使用</span><br><span class="hljs-keyword">var</span> x = !!(expression);          <span class="hljs-comment">// 推荐 使用双双非</span><br><span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(expression); <span class="hljs-comment">// 不太好 这个的局限性稍微有一些大</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">      非</span><br><span class="hljs-comment">          - ! 可以对一个值进行取非操作，真变假，假变真</span><br><span class="hljs-comment">              同时也可以使用！！来进行一个隐式的数据类型转换</span><br><span class="hljs-comment">        进行运算的时候会将值先转换为bool值，然后再进行运算</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">      与</span><br><span class="hljs-comment">          - 符号两侧的值进行与运算</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">      或</span><br><span class="hljs-comment">  */</span><br>  <span class="hljs-comment">//其实就是短路的规则</span><br>  <span class="hljs-comment">//与运算：如果两个值都是true，则返回后面的那个值</span><br>  <span class="hljs-keyword">var</span> result = <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span>;<br>  <span class="hljs-comment">//这里result的值就会变成2</span><br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;result=&quot;</span> + result)<br>  <span class="hljs-comment">// 如果两个值中有false，则返回靠前的false</span><br>  result = <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-number">2</span>;<br>  <span class="hljs-built_in">console</span>.log(result);<br>  result = <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-number">0</span>;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;result=&quot;</span>, result);<br><br>  <span class="hljs-comment">//如果两个值全都是false，那么也是返回靠前的false</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="1-4-自变量和常量-1"><a href="#1-4-自变量和常量-1" class="headerlink" title="1.4 自变量和常量"></a>1.4 自变量和常量</h2><p><strong>字面量（常量）：就是不可变的值</strong> </p>
+<p>&ensp;&ensp;&ensp;&ensp;比如：1 2 3 4 5</p>
+<p>&ensp;&ensp;&ensp;&ensp;字面量都是可以直接使用的，但是我们一般都不会直接使用字面量</p>
+<p><strong>变量：变量用来表存字面量，而且变量的值是可以任意改变的</strong> </p>
+<p>&ensp;&ensp;&ensp;&ensp;等于其他语言</p>
+<p><strong>声明变量</strong> </p>
+<p>在js中使用var变量来声明一个变量，等于go，只不过是弱类型的</p>
+<p>ps：JS没有真正意义上的const常量</p>
+<h3 id="1-4-1-进制-1"><a href="#1-4-1-进制-1" class="headerlink" title="1.4.1 进制"></a>1.4.1 进制</h3><p>在这里开一节说Js中的进制问题</p>
+<p>后续填坑。。。。</p>
+<h2 id="1-5-类型转换-1"><a href="#1-5-类型转换-1" class="headerlink" title="1.5 类型转换"></a>1.5 类型转换</h2><p>JavaScript中的类型具体可以去查看另外一个文档的表1-1</p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/7fnBaUUrJA44Ugz62KMVdN">JavaScript的笔记的一些资料</a><a target="_blank" rel="noopener" href="https://www.wolai.com/9ENkfKmhzSNsLdZVRWYw5B">表1-1</a></p>
+<h3 id="1-5-1-转换为String类型-1"><a href="#1-5-1-转换为String类型-1" class="headerlink" title="1.5.1 转换为String类型"></a>1.5.1 转换为String类型</h3><p><code>String</code>类型在js中是值类型，只不过在使用的时候当做引用类型来处理</p>
+<p>方法：</p>
+<ol>
+<li><p>使用<code>toStrin()</code> 方法，这一点和java有些许类似</p>
+</li>
+<li><p>使用 <code>string()</code> 函数，这个方法可以适用<code>null</code>和<code>undefined</code></p>
+</li>
+</ol>
+<h3 id="1-5-2-转换为Number类型-1"><a href="#1-5-2-转换为Number类型-1" class="headerlink" title="1.5.2 转换为Number类型"></a>1.5.2 转换为Number类型</h3><p><strong>Number类型是值类型</strong> </p>
+<p>将其他的类型转换为Number</p>
+<p>转换方式一：</p>
+<p>&ensp;&ensp;&ensp;&ensp;使用Number()函数</p>
+<p>&ensp;&ensp;&ensp;&ensp;字符串→ </p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.如果字符串中有非数字内容，则转换为NaN</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.如果是空字符串，或者全是空格，则转换为0</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;3.如果是纯数字，则转换成功</p>
+<p>&ensp;&ensp;&ensp;&ensp;Bool→</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.true为1</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.false为0</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Null–&gt; 0</p>
+<p>&ensp;&ensp;&ensp;&ensp;undefinde → 数字NaN</p>
+<p>转换方式二：</p>
+<p>&ensp;&ensp;&ensp;&ensp;parseInt()可以将一个字符换里有效的整数内容读取出来</p>
+<p>ps：这里的转换方式二有一个不好的点，就是转换的进制不确定，但是这个函数是一个重载的函数，当你再加入一个参数用来表示进制的时候，这个问题就可以得到解决</p>
+<blockquote>
+<p>在js中，如果需要表示16进制的数字，则需要以0x开头,如果是0开头的话就是8进制,如果要表示二进制数字，则需要以0b开头，但是不是所有的浏览器都支持,如果使用parseInt()，有些浏览器会解析成十进制，有些会解析成八进制,这个方法可以使用parseInt(a,10)，传入第二个参数解决这个问题，和go中的strconv.parseInt()一致</p>
+</blockquote>
+<h3 id="1-5-3-转换为Boolean类型-1"><a href="#1-5-3-转换为Boolean类型-1" class="headerlink" title="1.5.3 转换为Boolean类型"></a>1.5.3 转换为Boolean类型</h3><p>&ensp;&ensp;&ensp;&ensp;首先要清楚一点，<code>Boolean</code> 在js中有没有用1或者0等数字来转换的规则</p>
+<p>&ensp;&ensp;&ensp;&ensp;&gt; 如果需要，作为第一个参数传递的值将转换为布尔值。如果省略或值<code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>），该对象具有的初始值<code>false</code>。所有其他值，包括任何对象，空数组（<code>[]</code>）或字符串<code>&quot;false&quot;</code>，都会创建一个初始值为<code>true</code>的对象。<br>&ensp;&ensp;&ensp;&ensp;<br>&ensp;&ensp;&ensp;&ensp;注意不要将基本类型中的布尔值 <code>true</code> 和 <code>false</code> 与值为 <code>true</code> 和 <code>false</code> 的 <code>Boolean</code> 对象弄混了。<br>&ensp;&ensp;&ensp;&ensp;<br>&ensp;&ensp;&ensp;&ensp;其值不是<code>undefined</code>或<code>null</code>的任何对象（包括其值为<code>false</code>的布尔对象）在传递给条件语句时都将计算为<code>true</code>。</p>
+<p>&ensp;&ensp;&ensp;&ensp;在这里我们采用的是MDN的一篇文章</p>
+<p>&ensp;&ensp;&ensp;&ensp;<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean</a></p>
+<p>&ensp;&ensp;&ensp;&ensp;<strong>这里将文章的内容进行一些精简：</strong> </p>
+<p>意思就是说：</p>
+<ol>
+<li><p><code>0</code>，<code>-0</code>，<code>null</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>，或空字符串（<code>&quot;&quot;</code>）如果转换为<code>Boolean</code>初始值的话是false。</p>
+</li>
+<li><p>其余的值，包括任何对象或者是空数组或者是字符串的”false”都是<code>true</code></p>
+</li>
+</ol>
+<blockquote>
+<p>这里给出一点自己的见解，因为在js中的object和arrays仍旧是引用类型，所以就算初始化之后没有赋值也会默认是true</p>
+</blockquote>
+<h1 id="2-运算符-1"><a href="#2-运算符-1" class="headerlink" title="2.运算符"></a>2.运算符</h1><h2 id="2-1-算术运算符-1"><a href="#2-1-算术运算符-1" class="headerlink" title="2.1 算术运算符"></a>2.1 算术运算符</h2><p>算数运算符</p>
+<p>任何数据和NaN进行运算最后的结果都是NaN</p>
+<p>对非Number值进行运算的时候都会转成Number值进行运算，string除外</p>
+<p>+</p>
+<p>&ensp;&ensp;&ensp;&ensp;-可以对两个值进行加法运算，字符串相加，拼串操作</p>
+<p>&ensp;&ensp;&ensp;&ensp;-非Number类型的值进行加减法的时候，true = 1 ,false = 0, null = 0</p>
+<p>&ensp;&ensp;&ensp;&ensp;-任何值和字符串做加法都会先转换成字符串，然后进行拼串操作</p>
+<p>&ensp;&ensp;&ensp;&ensp;-任意类型加上一个空串即可变成字符串</p>
+<p>-</p>
+<p>&ensp;&ensp;&ensp;&ensp;-两个值相减，减一个string也会转变成Number</p>
+<p>*</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同上，做加减乘除都会转换为Number，null为0，undefined为NaN</p>
+<p>/</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同上</p>
+<p>%</p>
+<p>&ensp;&ensp;&ensp;&ensp;-同别的语言</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">var</span> num2 = <span class="hljs-number">20</span>;<br><span class="hljs-built_in">console</span>.log(num + num2);<br><span class="hljs-built_in">console</span>.log(num - num2);<br><span class="hljs-built_in">console</span>.log(num * num2);<br><span class="hljs-built_in">console</span>.log(num / num2);<br><span class="hljs-built_in">console</span>.log(num % num2);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="2-2-一元运算符-1"><a href="#2-2-一元运算符-1" class="headerlink" title="2.2 一元运算符"></a>2.2 一元运算符</h2><p>一元运算符，只需要一个操作数</p>
+<p>正号</p>
+<p>&ensp;&ensp;&ensp;&ensp;正号不会对数字产生任何影响</p>
+<p>负号</p>
+<p>&ensp;&ensp;&ensp;&ensp;负号可以对数字进行符号的取反</p>
+<p>-对于一个非Number类型的值</p>
+<p>&ensp;&ensp;&ensp;&ensp;它会将其先转换为Number类型的值，然后再运算</p>
+<p>可以通过这个方式对于一个变量进行类型的转换，通过+号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">1</span><br>num = <span class="hljs-string">&quot;&quot;</span> + num <span class="hljs-comment">//类型转换为string</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> num)<br><span class="hljs-built_in">console</span>.log(num)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-自增自减运算符-1"><a href="#2-3-自增自减运算符-1" class="headerlink" title="2.3 自增自减运算符"></a>2.3 自增自减运算符</h2><p>自增 ++ - 通过自增可以改变+1  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 也有前置和后置，和C语言一样  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 和C语言一模一样</p>
+<p>自减 — -通过自减可以改变-1</p>
+<p>&ensp;&ensp;&ensp;&ensp;- 也有前置和后置，和C语言一样  </p>
+<p>&ensp;&ensp;&ensp;&ensp;- 和C语言一模一样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> num = <span class="hljs-number">0</span>;<br>num++;<br>++num;<br><span class="hljs-built_in">console</span>.log(num++) <span class="hljs-comment">//输出的是num++的值，这里值是2</span><br><span class="hljs-built_in">console</span>.log(++num) <span class="hljs-comment">//这里输出的是++num的值，++num的值是4</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-4-逻辑运算符-1"><a href="#2-4-逻辑运算符-1" class="headerlink" title="2.4 逻辑运算符"></a>2.4 逻辑运算符</h2><p>和别的语言一样，与或非</p>
+<p><strong>非</strong> :</p>
+<p>&ensp;&ensp;&ensp;&ensp;！可以对一个值进行取非操作，真变假，假变真</p>
+<p>&ensp;&ensp;&ensp;&ensp;同时也可以使用！！来进行一个隐式的数据类型转换</p>
+<p>与和非也是同样的操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> b1 = <span class="hljs-literal">true</span>;<br><span class="hljs-keyword">let</span> b2 = <span class="hljs-literal">false</span>;<br><span class="hljs-built_in">console</span>.log(b1||b2)<br><span class="hljs-built_in">console</span>.log(b1&amp;&amp;b2)<br><span class="hljs-built_in">console</span>.log(!b1)<br><span class="hljs-built_in">console</span>.log(!b2)<br><span class="hljs-built_in">console</span>.log(!!num)<br></code></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="3-循环，分支，判断-1"><a href="#3-循环，分支，判断-1" class="headerlink" title="3 循环，分支，判断"></a>3 循环，分支，判断</h1><h1 id="4-面对对象的特性以及值类型和引用类型-1"><a href="#4-面对对象的特性以及值类型和引用类型-1" class="headerlink" title="4 面对对象的特性以及值类型和引用类型"></a>4 面对对象的特性以及值类型和引用类型</h1><h1 id="4-函数-1"><a href="#4-函数-1" class="headerlink" title="4 函数"></a>4 函数</h1><h2 id="4-1-构建函数的几种方法-1"><a href="#4-1-构建函数的几种方法-1" class="headerlink" title="4.1 构建函数的几种方法"></a>4.1 构建函数的几种方法</h2><h3 id="4-1-1-创建一个函数对象-1"><a href="#4-1-1-创建一个函数对象-1" class="headerlink" title="4.1.1 创建一个函数对象"></a>4.1.1 创建一个函数对象</h3><p>&ensp;&ensp;&ensp;&ensp;这个的使用情况是真的少</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法一：创建一个函数对象</span><br><span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">&quot;console.log(&#x27;Hello 这是我第一个函数&#x27;);&quot;</span>);<br>f1();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-2-使用函数声明创建函数-1"><a href="#4-1-2-使用函数声明创建函数-1" class="headerlink" title="4.1.2 使用函数声明创建函数"></a>4.1.2 使用函数声明创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法二：使用函数声明来创建一个函数</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">  function 函数名 ([形参1，形参2，...形参N]) &#123;</span><br><span class="hljs-comment">    代码块</span><br><span class="hljs-comment">  &#125;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello 这是我的第二条函数&quot;</span>);<br>&#125;<br>f2();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-3-使用函数表达式创建函数-1"><a href="#4-1-3-使用函数表达式创建函数-1" class="headerlink" title="4.1.3 使用函数表达式创建函数"></a>4.1.3 使用函数表达式创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 方法三：</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">  使用函数表达式来创建一个函数</span><br><span class="hljs-comment">  var 函数名 = function（[arguments...]） &#123;</span><br><span class="hljs-comment">    code</span><br><span class="hljs-comment">  &#125;</span><br><span class="hljs-comment">*/</span><br> <span class="hljs-keyword">var</span> f3 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello 这是我的第三个函数&quot;</span>);<br> &#125;<br> f3();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-4-匿名函数-1"><a href="#4-1-4-匿名函数-1" class="headerlink" title="4.1.4 匿名函数"></a>4.1.4 匿名函数</h3><p>&ensp;&ensp;&ensp;&ensp;没有名字的函数，在4.1.3中使用到的函数表达式就是匿名函数，匿名函数需要的实参在大括号的结尾使用一个小括号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> f4 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(num);<br>&#125;(<span class="hljs-number">20</span>)<br>f4();<br></code></pre></td></tr></table></figure>
+
+
+<p>var f4 = function(num){</p>
+<p>&ensp;&ensp;&ensp;&ensp;console.log(num);</p>
+<p>}(20)</p>
+<p>f4();</p>
+<h3 id="4-1-5-形参与实参-1"><a href="#4-1-5-形参与实参-1" class="headerlink" title="4.1.5 形参与实参"></a>4.1.5 形参与实参</h3><ol>
+<li><p>形参并不需要给定类型，所以在执行特定功能的函数时最好是去判断类型再决定是否继续执行</p>
+</li>
+<li><p>解析器并不会去管你有多少实参，如果是大于需要的参数，那么多余的实参会被忽略掉</p>
+</li>
+<li><p>如果是少于的话，没有实参的形参就是undefined</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">num1, num2</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> num1+num2;<br>&#125;<br><span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>));<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="4-1-6-返回值-1"><a href="#4-1-6-返回值-1" class="headerlink" title="4.1.6 返回值"></a>4.1.6 返回值</h3><ol>
+<li>js不能达到多个返回值的效果，如果想要做到多个返回值的效果可以使用全局变量或者是引用类型或者是数组的方式达到这个效果</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mul</span>(<span class="hljs-params">num1, num2</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> num1, num2;<br>&#125;<br><span class="hljs-keyword">var</span> a, b = mul(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <br><span class="hljs-comment">// 这里a的值是undefined， b的值是2</span><br><span class="hljs-built_in">console</span>.log(a,b)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-7-立即执行函数-1"><a href="#4-1-7-立即执行函数-1" class="headerlink" title="4.1.7 立即执行函数"></a>4.1.7 立即执行函数</h3><ol>
+<li><p>立即执行函数只会执行一次</p>
+</li>
+<li><p>立即执行函数需要使用括号包起来</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 立即执行函数</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">num1, num2</span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(num1);<br>    <span class="hljs-built_in">console</span>.log(num2);<br>&#125;)(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="4-2-方法-1"><a href="#4-2-方法-1" class="headerlink" title="4.2 方法"></a>4.2 方法</h2><blockquote>
+<p>js中的方法声明和java非常类似，也是某个对象下面的成员，但是js中更体现了方法和对象的关系，在没有修饰符约束下的js，感觉可构造性更强。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//方法一：直接声明一个方法</span><br><span class="hljs-keyword">var</span> student2 = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;孙悟空&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">sayName</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 在js中，成员变量可以是方法，在这种情况下，我们称这个成员变量，即这个函数是这个对象的方法</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">*   函数可以成为一个对象的属性</span><br><span class="hljs-comment">*       类似于java中的成员变量，只能通过student调用这个方法(method)</span><br><span class="hljs-comment">* */</span><br><span class="hljs-comment">// 方法二：.</span><br>student.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>&#125;<br>student.sayName();<br>student2.sayName();<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="4-3-枚举对象中的属性-1"><a href="#4-3-枚举对象中的属性-1" class="headerlink" title="4.3 枚举对象中的属性"></a>4.3 枚举对象中的属性</h2><p>这里需要知道dot操作属性和 [] 操作属性的区别，所以这里引用了一篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.wolai.com/rDyehK2nSrcFc53D97TeQX"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> student = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;猪八戒&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">gender</span>: <span class="hljs-string">&quot;男&quot;</span>,<br>    <span class="hljs-attr">address</span>: <span class="hljs-string">&quot;高老庄&quot;</span><br>&#125;;<br>student.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name);<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> n <span class="hljs-keyword">in</span> student) &#123;<br>    <span class="hljs-built_in">console</span>.log(n) <span class="hljs-comment">// n存储的是字段(成员变量的名字)</span><br>    <span class="hljs-comment">//这里会输出五个字段，分别是name，gender，age，address和sayName，由此可见方法也是算在字段里面的，</span><br>    <span class="hljs-comment">//如果想要取出在student中他们的值，那么可以：</span><br>    <span class="hljs-built_in">console</span>.log(student[n])<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-作用域-scope-和面向对象-1"><a href="#5-作用域-scope-和面向对象-1" class="headerlink" title="5 作用域(scope)和面向对象"></a>5 作用域(scope)和面向对象</h1><h2 id="5-1-作用域-1"><a href="#5-1-作用域-1" class="headerlink" title="5.1 作用域"></a>5.1 作用域</h2><p>作用域基本上和C语言没什么区别，需要注意以下几点：</p>
+<ol>
+<li>存在一个全局的对象Windows，大部分的函数都是使用的window，比如说alert，其实可以写成window.alert。或者是cansole.log，也可以写成window.console.log</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&lt;!DOCTYPE html&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-comment">/*</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        * 作用域</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *  -- 作用域指的是一个变量的作用的范围</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *  js中存在两种作用域“</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *   1. 全局作用域，即全局变量</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --直接编写在script标签中的js代码，都在全局作用域</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --全局作用域在页面打开时创建，在页面关闭时销毁</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --在全局作用域中有一个全局对象window.</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           代表的是一个浏览器的窗口，它由浏览器创建，我们可以直接使用</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *       --在全局作用域中：</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           创建的变量都会作为window对象的属性保存</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *           创建的函数都会作为window对象的方法保存</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        *   2.函数作用域，又叫局部变量</span></span></span><br><span class="hljs-comment"><span class="javascript"><span class="xml">        * */</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>); <span class="hljs-comment">// 这里可以证明window是一个全局变量，还是</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 这里是自己创建的一个变量 a</span></span></span><br><span class="javascript"><span class="xml">        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.a); <span class="hljs-comment">// 这里可以证明a是window的一个属性</span></span></span><br><span class="javascript"><span class="xml">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml"></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-2-作用域在ES6中的声明-1"><a href="#5-2-作用域在ES6中的声明-1" class="headerlink" title="5.2 作用域在ES6中的声明"></a>5.2 作用域在ES6中的声明</h2><p>这里日后填坑，ES6把let作为块声明</p>
+<h1 id="6-对象-1"><a href="#6-对象-1" class="headerlink" title="6.对象"></a>6.对象</h1><p>首先还是基础的概念，万物皆对象，而JavaScript中是基于原型链的。。。日后填坑</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>codexc<br>
+        <strong>本文链接：</strong><a href="http://101.34.225.67/2021/12/09/JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="http:&#x2F;&#x2F;101.34.225.67&#x2F;2021&#x2F;12&#x2F;09&#x2F;JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;101.34.225.67&#x2F;2021&#x2F;12&#x2F;09&#x2F;JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/JavsScript/" rel="tag">JavsScript</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <script id="dsq-count-scr" src="https://codexc-cn.disqus.com/count.js" async></script>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://101.34.225.67/2021/12/09/JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://101.34.225.67/2021/12/09/JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script id="disqus-thread-script">
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//codexc-cn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">JavaScript学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81JavaScript%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">1、JavaScript的基本输入输出概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%89%E4%B8%AA%E8%BE%93%E5%87%BA%E6%A1%88%E4%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 简单的三个输出案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 代码的编写位置和基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.2.1 编写位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.2.2.</span> <span class="toc-text">1.2.2 基本语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 几种数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-Number%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 Number类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 浮点型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 字符和字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-Boolean%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.4.</span> <span class="toc-text">1.3.4 Boolean类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E8%87%AA%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">1.4 自变量和常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-%E8%BF%9B%E5%88%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">1.4.1 进制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.5.</span> <span class="toc-text">1.5 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-1-%E8%BD%AC%E6%8D%A2%E4%B8%BAString%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.1.</span> <span class="toc-text">1.5.1 转换为String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-2-%E8%BD%AC%E6%8D%A2%E4%B8%BANumber%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.2.</span> <span class="toc-text">1.5.2 转换为Number类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-3-%E8%BD%AC%E6%8D%A2%E4%B8%BABoolean%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.3.</span> <span class="toc-text">1.5.3 转换为Boolean类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">2.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 一元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 自增自减运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.4.</span> <span class="toc-text">2.4 逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%BE%AA%E7%8E%AF%EF%BC%8C%E5%88%86%E6%94%AF%EF%BC%8C%E5%88%A4%E6%96%AD"><span class="toc-number">4.</span> <span class="toc-text">3 循环，分支，判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">4 面对对象的特性以及值类型和引用类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">4 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E6%9E%84%E5%BB%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">4.1 构建函数的几种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.1.1.</span> <span class="toc-text">4.1.1 创建一个函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.2.</span> <span class="toc-text">4.1.2 使用函数声明创建函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.3.</span> <span class="toc-text">4.1.3 使用函数表达式创建函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.4.</span> <span class="toc-text">4.1.4 匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-5-%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82"><span class="toc-number">6.1.5.</span> <span class="toc-text">4.1.5 形参与实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-6-%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">6.1.6.</span> <span class="toc-text">4.1.6 返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-7-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.7.</span> <span class="toc-text">4.1.7 立即执行函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%96%B9%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">4.2 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%9E%9A%E4%B8%BE%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">6.3.</span> <span class="toc-text">4.3 枚举对象中的属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%9C%E7%94%A8%E5%9F%9F-scope-%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">7.</span> <span class="toc-text">5 作用域(scope)和面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">7.1.</span> <span class="toc-text">5.1 作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%9C%A8ES6%E4%B8%AD%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">7.2.</span> <span class="toc-text">5.2 作用域在ES6中的声明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%AF%B9%E8%B1%A1"><span class="toc-number">8.</span> <span class="toc-text">6.对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81JavaScript%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A6%82%E5%BF%B5-1"><span class="toc-number">9.</span> <span class="toc-text">1、JavaScript的基本输入输出概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%89%E4%B8%AA%E8%BE%93%E5%87%BA%E6%A1%88%E4%BE%8B-1"><span class="toc-number">9.1.</span> <span class="toc-text">1.1 简单的三个输出案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-1"><span class="toc-number">9.2.</span> <span class="toc-text">1.2 代码的编写位置和基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE-1"><span class="toc-number">9.2.1.</span> <span class="toc-text">1.2.1 编写位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-1"><span class="toc-number">9.2.2.</span> <span class="toc-text">1.2.2 基本语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.3.</span> <span class="toc-text">1.3 几种数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-Number%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.3.1.</span> <span class="toc-text">1.3.1 Number类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E6%B5%AE%E7%82%B9%E5%9E%8B-1"><span class="toc-number">9.3.2.</span> <span class="toc-text">1.3.2 浮点型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2-1"><span class="toc-number">9.3.3.</span> <span class="toc-text">1.3.3 字符和字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-Boolean%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.3.4.</span> <span class="toc-text">1.3.4 Boolean类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E8%87%AA%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F-1"><span class="toc-number">9.4.</span> <span class="toc-text">1.4 自变量和常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-%E8%BF%9B%E5%88%B6-1"><span class="toc-number">9.4.1.</span> <span class="toc-text">1.4.1 进制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><span class="toc-number">9.5.</span> <span class="toc-text">1.5 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-1-%E8%BD%AC%E6%8D%A2%E4%B8%BAString%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.5.1.</span> <span class="toc-text">1.5.1 转换为String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-2-%E8%BD%AC%E6%8D%A2%E4%B8%BANumber%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.5.2.</span> <span class="toc-text">1.5.2 转换为Number类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-3-%E8%BD%AC%E6%8D%A2%E4%B8%BABoolean%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">9.5.3.</span> <span class="toc-text">1.5.3 转换为Boolean类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BF%90%E7%AE%97%E7%AC%A6-1"><span class="toc-number">10.</span> <span class="toc-text">2.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6-1"><span class="toc-number">10.1.</span> <span class="toc-text">2.1 算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6-1"><span class="toc-number">10.2.</span> <span class="toc-text">2.2 一元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6-1"><span class="toc-number">10.3.</span> <span class="toc-text">2.3 自增自减运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6-1"><span class="toc-number">10.4.</span> <span class="toc-text">2.4 逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%BE%AA%E7%8E%AF%EF%BC%8C%E5%88%86%E6%94%AF%EF%BC%8C%E5%88%A4%E6%96%AD-1"><span class="toc-number">11.</span> <span class="toc-text">3 循环，分支，判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">12.</span> <span class="toc-text">4 面对对象的特性以及值类型和引用类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%87%BD%E6%95%B0-1"><span class="toc-number">13.</span> <span class="toc-text">4 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E6%9E%84%E5%BB%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95-1"><span class="toc-number">13.1.</span> <span class="toc-text">4.1 构建函数的几种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1-1"><span class="toc-number">13.1.1.</span> <span class="toc-text">4.1.1 创建一个函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0-1"><span class="toc-number">13.1.2.</span> <span class="toc-text">4.1.2 使用函数声明创建函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0-1"><span class="toc-number">13.1.3.</span> <span class="toc-text">4.1.3 使用函数表达式创建函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0-1"><span class="toc-number">13.1.4.</span> <span class="toc-text">4.1.4 匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-5-%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82-1"><span class="toc-number">13.1.5.</span> <span class="toc-text">4.1.5 形参与实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-6-%E8%BF%94%E5%9B%9E%E5%80%BC-1"><span class="toc-number">13.1.6.</span> <span class="toc-text">4.1.6 返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-7-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0-1"><span class="toc-number">13.1.7.</span> <span class="toc-text">4.1.7 立即执行函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%96%B9%E6%B3%95-1"><span class="toc-number">13.2.</span> <span class="toc-text">4.2 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%9E%9A%E4%B8%BE%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7-1"><span class="toc-number">13.3.</span> <span class="toc-text">4.3 枚举对象中的属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%9C%E7%94%A8%E5%9F%9F-scope-%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1"><span class="toc-number">14.</span> <span class="toc-text">5 作用域(scope)和面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E4%BD%9C%E7%94%A8%E5%9F%9F-1"><span class="toc-number">14.1.</span> <span class="toc-text">5.1 作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%9C%A8ES6%E4%B8%AD%E7%9A%84%E5%A3%B0%E6%98%8E-1"><span class="toc-number">14.2.</span> <span class="toc-text">5.2 作用域在ES6中的声明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%AF%B9%E8%B1%A1-1"><span class="toc-number">15.</span> <span class="toc-text">6.对象</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="搜索" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1639053335343"></script>
+
+
+	<script async src="/js/search.js?v=1639053335343"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
